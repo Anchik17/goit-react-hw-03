@@ -5,10 +5,10 @@ import ContactList from './Components/ContactForm/ContactList/ContactList';
 import { nanoid } from 'nanoid';
 import phoneBook from '../src/assets/phoneBook.json';
 
-export const App = () => {
+function App() {
   const [contacts, setContacts] = useState(() => {
     const savedContacts = window.localStorage.getItem('contactsData');
-    savedContacts ? Json.parse(savedContacts) : phoneBook;
+    savedContacts ? JSON.parse(savedContacts) : phoneBook;
   });
 
   useEffect(() => {
@@ -27,11 +27,10 @@ export const App = () => {
       contact.number.includes(search)
   );
 
-  const addContacts = contacts.filter(
-    (contact) =>
-      contact.name.toLowerCase().includes(search) ||
-      contact.number.includes(search)
-  );
+  const addContact = (name, number) => {
+    const newContact = { id: nanoid(), name, number };
+    setContacts((prev) => [...prev, newContact]);
+  };
 
   const deleteContact = (id) => {
     setContacts((prev) => prev.filter((item) => item.id !== id));
@@ -40,9 +39,11 @@ export const App = () => {
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox search={search} onSearch={setSearch} />
-      <ContactList contacts={contacts} />
+      <ContactForm addContact={addContact} />
+      <SearchBox onSearch={handleSearch} />
+      <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
     </div>
   );
-};
+}
+
+export default App;

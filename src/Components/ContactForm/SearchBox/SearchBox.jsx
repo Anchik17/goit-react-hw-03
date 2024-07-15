@@ -1,22 +1,17 @@
-import { useId } from 'react';
+import s from './SearchBox.module.css';
 
-const SearchBox = ({ search, onSearch }) => {
-  const searchId = useId();
+const SearchBox = ({ onSearch }) => {
   const handleChange = (e) => {
     onSearch(e.target.value);
   };
 
   return (
-    <>
-      <label htmlFor={searchId}>Find contacts by name</label>
-      <input
-        type='text'
-        name='search'
-        id={searchId}
-        value={search}
-        onChange={handleChange}
-      ></input>
-    </>
+    <div className={s.container}>
+      <label className={s.label}>
+        <span className={s.span}>Find contacts by name</span>
+        <input className={s.input} type='text' onChange={handleChange} />
+      </label>
+    </div>
   );
 };
 
