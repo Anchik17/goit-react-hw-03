@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import ContactForm from './Components/ContactForm/ContactForm';
-import SearchBox from './Components/ContactForm/SearchBox/SearchBox';
-import ContactList from './Components/ContactForm/ContactList/ContactList';
+import SearchBox from './Components/SearchBox/SearchBox';
+import ContactList from './Components/ContactList/ContactList';
 import { nanoid } from 'nanoid';
 import phoneBook from '../src/assets/phoneBook.json';
 
 function App() {
   const [contacts, setContacts] = useState(() => {
     const savedContacts = window.localStorage.getItem('contactsData');
-    savedContacts ? JSON.parse(savedContacts) : phoneBook;
+    return savedContacts ? JSON.parse(savedContacts) : phoneBook;
   });
 
   useEffect(() => {

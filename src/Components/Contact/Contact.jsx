@@ -4,7 +4,7 @@ import s from './Contact.module.css';
 
 const Contact = ({ name, number, deleteContact, id }) => {
   return (
-    <li>
+    <div className={s.container}>
       <div>
         <p>
           <FaUser /> {name}
@@ -16,7 +16,7 @@ const Contact = ({ name, number, deleteContact, id }) => {
       <button className={s.btn} type='button' onClick={() => deleteContact(id)}>
         Delete
       </button>
-    </li>
+    </div>
   );
 };
 
