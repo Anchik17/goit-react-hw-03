@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import ContactForm from './Components/ContactForm/ContactForm';
-import SearchBox from './Components/SearchBox/SearchBox';
-import ContactList from './Components/ContactList/ContactList';
+import ContactForm from './components/ContactForm/ContactForm';
+import SearchBox from './components/SearchBox/SearchBox';
+import ContactList from './components/ContactList/ContactList';
 import { nanoid } from 'nanoid';
 import phoneBook from '../src/assets/phoneBook.json';
 
