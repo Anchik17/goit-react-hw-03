@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import SearchBox from './components/SearchBox/SearchBox';
-import { nanoid } from 'nanoid';
 import phoneBook from '../src/assets/phoneBook.json';
+import { nanoid } from 'nanoid';
 
 function App() {
   const [contacts, setContacts] = useState(() => {
