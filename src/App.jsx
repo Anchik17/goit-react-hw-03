@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import ContactForm from './qwe/ContactForm/ContactForm';
-import ContactList from './qwe/ContactList/ContactList';
-import SearchBox from './qwe/SearchBox/SearchBox';
+import ContactForm from './components/ContactForm/ContactForm';
+import ContactList from './components/ContactList/ContactList';
+import SearchBox from './components/SearchBox/SearchBox';
 import phoneBook from '../src/assets/phoneBook.json';
 import { nanoid } from 'nanoid';
 
